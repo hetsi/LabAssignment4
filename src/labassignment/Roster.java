@@ -25,6 +25,16 @@ public class Roster {
 		students.add(student);
 	}
 	
+	void calculateClassAverage() {
+		OperationCalculateAverage avgCalc = new OperationCalculateAverage();
+		
+		System.out.println("~~~~~~ CLASS AVERAGE DATA ~~~~~~~");
+		
+		for(int i = 0; i<students.size();i++) {
+			System.out.println(students.get(i).name + " : " + avgCalc.calculateClassAverage(students.get(i)));
+		}
+	}
+	
 	
 
 }

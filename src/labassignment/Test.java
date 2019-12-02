@@ -12,14 +12,30 @@ public class Test {
 		student1.addExamScore(100);
 		student1.addExamScore(95);
 		
-		GradeTracker gradeTracker = new GradeTracker();
+		/*GradeTracker gradeTracker = new GradeTracker();
 		student1.registerObserver(gradeTracker);
 		
 		gradeTracker.printGrade(student1);
+		*/
 		
-		student1.addAssignmentScore(0);
-		student1.addExamScore(100);
-		//student1.addExamScore(100);
+		Student student2 = new Student("Jack");
+		student2.addAssignmentScore(95);
+		student2.addExamScore(100);
+		student2.addExamScore(90);
+		
+		Roster roster = new Roster("CS", "5800");
+		
+		roster.addStudent(student1);
+		roster.addStudent(student2);
+		
+		RosterAverage avgRoster = new RosterAverage();
+		try
+		{
+			avgRoster.calculateAverageForClassAPI(roster);
+		}
+		catch(Exception e) {
+			
+		}
 		
 		/*
 		ContextStrategy algo1 = new ContextStrategy(new OperationCalculateAverage());
