@@ -12,13 +12,23 @@ public class Test {
 		student1.addExamScore(100);
 		student1.addExamScore(95);
 		
+		GradeTracker gradeTracker = new GradeTracker();
+		student1.registerObserver(gradeTracker);
+		
+		gradeTracker.printGrade(student1);
+		
+		student1.addAssignmentScore(0);
+		student1.addExamScore(100);
+		//student1.addExamScore(100);
+		
+		/*
 		ContextStrategy algo1 = new ContextStrategy(new OperationCalculateAverage());
 		ContextStrategy algo2 = new ContextStrategy(new DropScoreAverage());
 		
 		System.out.println("result by algorithm 1 " + algo1.executeAlgorithm(student1));
 		System.out.println("result by algorithm 2 " +algo2.executeAlgorithm(student1));
 		System.out.println("result by algorithm 1 " +algo1.executeAlgorithm(student1));
-		
+		*/
 	}
 
 }

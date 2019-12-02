@@ -1,6 +1,6 @@
 package labassignment;
 
-public class GradeTracker {
+public class GradeTracker implements Observer{
 
 	private String calculateGrade(Student student) {
 		String grade;
@@ -27,5 +27,11 @@ public class GradeTracker {
 	
 	public void printGrade(Student student) {
 		System.out.println("Grade of the student : " + student.name+ " = " + calculateGrade(student));
+	}
+
+	@Override
+	public void update(Student student) {
+		printGrade(student);
+		
 	}
 }
